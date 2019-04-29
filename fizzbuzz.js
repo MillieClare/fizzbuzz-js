@@ -1,10 +1,7 @@
-
-
-// Here, we create our main function.
-function fizzbuzz() {
+function fizzbuzz(number) {
     console.log('Welcome to FizzBuzz!');
 
-    for (let i = 1; i <= 1000; i++) {
+    for (let i = 1; i <= number; i++) {
         let nextNumber = [];
         if (i % 3 === 0) {
             nextNumber.push('Fizz');
@@ -19,13 +16,14 @@ function fizzbuzz() {
             nextNumber = ['Bong'];
         }
         if (i % 13 === 0){
-            if(nextNumber === ['Fizz']){
+            if(nextNumber[0] === 'Fizz' || nextNumber.length === 0){
                 nextNumber.push('Fezz');
-            } else if(nextNumber[0] === 'Buzz' || nextNumber[0] === 'Bang' || nextNumber[0] === 'Bong'){
+            } else if(nextNumber[0].startsWith('B')){
                 nextNumber.unshift('Fezz');
-            } else {
-                nextNumber.push('Fezz');
             }
+        }
+        if (i % 17 === 0){
+            nextNumber.reverse();
         }
         if (nextNumber.length === 0) {
             console.log(i);
@@ -34,8 +32,5 @@ function fizzbuzz() {
         }
     }
 }
-// Now we run the main function...
-fizzbuzz();
-//If a number is a multiple of 7, print "Bang" instead of the number.
-//For numbers which are multiples of seven and three / five, append Bang
-//to what you'd have printed anyway. (E.g. 3 * 7 = 21: "FizzBang").
+
+fizzbuzz(40);
