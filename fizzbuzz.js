@@ -7,13 +7,16 @@ function fizzbuzz() {
     for (let i = 1; i <= 100; i++) {
         let nextNumber = '';
         if(i % 3 === 0) {
-            nextNumber = 'Fizz';
+            nextNumber += 'Fizz';
         } 
         if(i % 5 === 0) {
             nextNumber += 'Buzz';
         } 
         if(i % 7 === 0){
             nextNumber += 'Bang';
+        }
+        if(i % 11 === 0){
+            nextNumber = 'Bong';
         }
         if(nextNumber === ''){
             console.log(i)
